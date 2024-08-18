@@ -91,6 +91,28 @@ This data can then be analyzed, some examples include:
   <img src="img/price_odometer_screenshot.png" alt="CSV Example" width="95%">
 </p>
 
+The antiques history and estimated fair market value is returned as JSON:
+```
+{
+  "history": {
+    "make": "Singer",
+    "model": "C669067",
+    "class": "15",
+    "manufactured_date": "August 1910",
+    "manufactured_location": "Germany",
+    "description": "This antique Singer treadle sewing machine features real gold lettering and design, typical of early 20th-century craftsmanship. The treadle machine was a significant advancement in home sewing technology, allowing users to sew without electricity. The Model 15 class was popular for its reliability and was often used both in homes and small tailor shops."
+  },
+  "fair_market_value": {
+    "estimated_value": "$300 - $600",
+    "factors": [
+      "Condition: Good",
+      "Originality: High (gold design intact)",
+      "Market demand: Moderate",
+      "Comparable sales: Similar models have sold within this range on antique marketplaces."
+    ]
+  }
+}
+```
 
 <!-- LICENSE -->
 ## License
