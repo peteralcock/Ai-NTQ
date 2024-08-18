@@ -4,9 +4,14 @@ Users can define what they would like to search for, then fetch and parse data
 from both searches and individual ads and see the estimate market value and 
 history of the item in a results spreadsheet. 
 
+  <img src="img/splash.jpeg" alt="AI-NTQ" width="75%">
+
+
 * [Usage](#usage)
 * [Analyzing](#analyzing)
 * [License](#license)
+
+
 
 ## Installation
 ```
@@ -15,9 +20,29 @@ pip install requests beautifulsoup4 selenium pdfkit scrapy scrapyd
 ```
 
 ## Usage
+You can use the web cralwers for massive scans, or the CLI tool for individual postings.
+
+### Web Crawler
 ```
 scrapy crawl craigslist_antiques
 ```
+
+### CLI Tool
+Once you save the updated script as craigslist_antiques_cli.py, you can run it from the command line, passing in one or more specific Craigslist URLs:
+```
+python craigslist_antiques_cli.py https://newyork.craigslist.org/mnh/atq/d/pair-of-antique-kpm-figurines/7769922452.html --api-key YOUR_OPENAI_API_KEY
+```
+You can also pass multiple URLs:
+```
+python craigslist_antiques_cli.py https://newyork.craigslist.org/mnh/atq/d/pair-of-antique-kpm-figurines/7769922452.html https://newyork.craigslist.org/mnh/atq/d/another-antique-item/7777777777.html --api-key YOUR_OPENAI_API_KEY
+```
+
+#### Notes
+- Multiple URLs: The script can handle multiple URLs at once, processing each one individually.
+- Error Handling: Consider adding error handling for cases where a URL is invalid, the request fails, or the OpenAI API returns an error.
+- Temporary Files: Ensure that the temporary files created during the screenshot and PDF conversion process are properly managed and cleaned up to avoid issues with file handles.
+
+### Development
 
 Ai-NTQ is built around 6 functions/classes for flexibility. These
 functions/classes are listed below. 
