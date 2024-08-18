@@ -2,7 +2,7 @@
 Automated antique hunting and market value estimation with Ai-powered web crawling. 
 Users can define what they would like to search for, then fetch and parse data
 from both searches and individual ads and see the estimate market value and 
-history of the item in a results spreadsheet. 
+histories in a spreadsheet. 
 
   <img src="img/splash.jpg" alt="AI-NTQ" width="75%">
 
