@@ -8,7 +8,16 @@ history of the item in a results spreadsheet.
 * [Analyzing](#analyzing)
 * [License](#license)
 
+## Installation
+```
+pip install requests beautifulsoup4 selenium pdfkit scrapy scrapyd
+
+```
+
 ## Usage
+```
+scrapy crawl craigslist_antiques
+```
 
 Ai-NTQ is built around 6 functions/classes for flexibility. These
 functions/classes are listed below. 
