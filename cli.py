@@ -7,7 +7,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 import json
 from tempfile import NamedTemporaryFile
 import argparse
+from openai import OpenAI
 
+# Initialize the OpenAI client
+client = OpenAI(api_key="YOUR_OPENAI_API_KEY")
 def parse_listing(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -38,47 +41,38 @@ def parse_listing(url):
     temp_pdf.close()
 
     # Send the information to the OpenAI API
-    analyze_with_openai(title, price, description, pdf_content)
+    analyze_with_openai(title, price, description)
 
-def analyze_with_openai(title, price, description, pdf_content):
-    api_url = 'https://api.openai.com/v1/completions'
-    headers = {
-        'Authorization': f'Bearer {args.api_key}',
-        'Content-Type': 'application/json',
-    }
-
-    data = {
-        "model": "text-davinci-003",
-        "prompt": f"Analyze the following Craigslist antique description and the attached PDF screenshot of the listing to estimate its market value: \n\n{description}",
-        "max_tokens": 50,
-        "files": [
+def analyze_with_openai(title, price, description):
+    # Create the chat completion
+    completion = client.chat.completions.create(
+        model="gpt-4o-mini",  # Replace with the correct model ID if necessary
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
             {
-                "filename": "listing.pdf",
-                "content": pdf_content.decode('latin1'),  # Encoding to safely include in JSON
-                "type": "application/pdf"
+                "role": "user",
+                "content": f"Estimate the market value of the following antique item based on its description:\n\n{description}"
             }
         ]
-    }
+    )
 
-    response = requests.post(api_url, headers=headers, json=data)
-    result = response.json()
-
-    estimated_value = result['choices'][0]['text'].strip()
+    # Extract and print the message content from the response
     print(f"Title: {title}")
     print(f"Price: {price}")
-    print(f"Estimated Market Value: {estimated_value}\n")
+    estimated_value = completion.choices[0].message.content.strip()
 
-def main():
+    print(estimated_value)
+
+if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Craigslist Antiques Scraper and Market Value Estimator')
-    parser.add_argument('urls', nargs='+', help='The URLs of Craigslist antique listings to scrape (e.g., https://newyork.craigslist.org/mnh/atq/d/pair-of-antique-kpm-figurines/7769922452.html)')
+    parser.add_argument('url', type=str, help='The URL of the Craigslist antique listing to scrape')
     parser.add_argument('--api-key', type=str, required=True, help='Your OpenAI API key')
 
-    global args
     args = parser.parse_args()
 
-    # Process each URL passed in the command line
-    for url in args.urls:
-        parse_listing(url)
+    # Set the API key for the OpenAI client
+    client.api_key = args.api_key
 
-if __name__ == '__main__':
-    main()
+    # Start the process
+    parse_listing(args.url)
+
