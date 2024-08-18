@@ -147,7 +147,7 @@ The antiques history and estimated fair market value is returned as JSON:
   }
 }
 ```
-And it regular text format...
+And in extended text format...
 
 ```
 Title: Pair of Antique KPM Figurines
