@@ -147,6 +147,29 @@ The antiques history and estimated fair market value is returned as JSON:
   }
 }
 ```
+And it regular text format...
+
+```
+Title: Pair of Antique KPM Figurines
+Price: $625
+To estimate the market value of the described antique KPM porcelain figurines, several factors need to be considered:
+
+1. **Brand Reputation**: KPM (Königliche Porzellan-Manufaktur) is a highly regarded porcelain manufacturer known for its quality and craftsmanship, which can significantly increase the value of its items.
+
+2. **Condition**: The figurines are described as being in "very good condition" with only a small mark on the back of one. This is favorable for value, but the presence of any damage (even minor) can affect the price.
+
+3. **Size and Detail**: The dimensions (9" high and 4 7/8" wide) suggest they are sizable figurines, which can be more desirable than smaller pieces. The detailing in the figurines would also play a role in valuation.
+
+4. **Markings**: The presence of the KPM mark is crucial for authentication and typically adds to the value. The number "2322" may indicate a specific design or series, which could be further researched to find comparable sales.
+
+5. **Market Trends**: The current market demand for antique porcelain figurines can vary. Recent sales of similar KPM pieces can help gauge a relevant price range.
+
+Given these factors, KPM porcelain figurines can typically range from a few hundred to several thousand dollars, depending on rarity and desirability. For a pair of figurines in very good condition, a rough estimate might be around $200 to $800 or more, depending on the specific artistic details and current market demand.
+
+For a more accurate estimate, I recommend checking recent auction results and online marketplaces like eBay or specialized auction houses that deal in antiques. Taking the figurines to an antique appraiser may also provide a professional valuation.
+```
+
+
 
 <!-- LICENSE -->
 ## License
