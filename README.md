@@ -1,45 +1,13 @@
 # Ai-NTQ
-Automated antique hunting and market value estimation with Ai-powered web crawling
+Automated antique hunting and market value estimation with Ai-powered web crawling. 
+Users can define what they would like to search for, then fetch and parse data
+from both searches and individual ads and see the estimate market value and 
+history of the item in a results spreadsheet. 
 
-# CraigslistScraper
-
-**Note:** CraigslistScraper is for personal use and data science only.
-
-**Updated (12/26/2023):** Craigslist implemented some changes a couple of months
-ago that broke the previous version of this library. The recent updates to
-this library address these changes. That said, it also involved a complete
-refactor of the library, and the new version 1.1.1 is not backwards compatible
-with the previous version 1.0.1. 
-
-CraigslistScraper is a lightweight tool for scraping Craigslist. Users can define 
-what they would like to search for, then CraigslistScraper can fetch and parse data
-from both searches and individual ads. 
-
-There are no official docs, but the code-base is ~200 lines of code and is documented. 
-
-<!-- TABLE OF CONTENTS -->
-Table of Contents
-=================
-
-* [Installation](#installation)
 * [Usage](#usage)
 * [Analyzing](#analyzing)
 * [License](#license)
 
-
-<!-- INSTALLATION -->
-## Installation
-
-To install the package just run: 
-
-```
-pip install craigslistscraper
-``` 
-
-The only requirements are Python 3.7+, and the `requests` and `beautifulsoup4` libraries. 
-
-
-<!-- USAGE -->
 ## Usage
 
 Ai-NTQ is built around 6 functions/classes for flexibility. These
