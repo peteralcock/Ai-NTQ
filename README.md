@@ -4,7 +4,7 @@ Users can define what they would like to search for, then fetch and parse data
 from both searches and individual ads and see the estimate market value and 
 history of the item in a results spreadsheet. 
 
-  <img src="img/splash.jpeg" alt="AI-NTQ" width="75%">
+  <img src="img/splash.jpg" alt="AI-NTQ" width="75%">
 
 
 * [Usage](#usage)
